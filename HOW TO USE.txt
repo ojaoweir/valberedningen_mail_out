@@ -1,0 +1,17 @@
+Python 3 is required to run this program
+To install plugins type the following in terminal (can also be done in venv ofc)
+  pip install xlrd
+  pip install smtplib
+  pip install jinja2
+
+Fill Files/email_text.txt with what you want the email to say. To get values from the excel spreadsheet
+    write {{col}} where col is the name of the column
+
+Fill the excel spreadsheet with data for the email.
+    Note that the first column must be the receivers email
+    Note that the second column must be the email subject
+    Note that you need to enter your log in credentials on the second sheet
+
+Only connects to gmail accounts, make sure your gmail account is set to allows third party applications.
+
+(This works on Valberedningens email)
