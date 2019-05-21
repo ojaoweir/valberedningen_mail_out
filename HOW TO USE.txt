@@ -1,17 +1,35 @@
 Python 3 is required to run this program
-To install plugins type the following in terminal (can also be done in venv ofc)
+  -[Windows] Remember to add python to your path during installation (it is a checkbox)
+
+start a virtual environment:
+  -python3 -m venv venv  (needs only be done first time)
+  -open the virtual environment
+    -[windows] venv\Scripts\activate
+    -[mac/linux] source venv/bin/activate
+While in virtual environment install plugins by typing the following in terminal
   pip install xlrd
   pip install smtplib
   pip install jinja2
 
-Fill Files/email_text.txt with what you want the email to say. To get values from the excel spreadsheet
-    write {{col}} where col is the name of the column
+Innan användning:
+  Se till att ha namn i kolumn B
+  Se till att ha mailen i kolumn A
+  Se till att ha mailets ämne i kolumn C
+  Dela upp posterna i olika kolumner med text-to-column funktionen i read_excel
+    Första posten ska börja i kolumn F
+  Om det är för intervju så ska tiden ligga i kolumn D
+  Om det är för intervju ska salen ligga i kolumn E
 
-Fill the excel spreadsheet with data for the email.
-    Note that the first column must be the receivers email
-    Note that the second column must be the email subject
-    Note that you need to enter your log in credentials on the second sheet
+Programmet kopierar till clipboard, så det ligger redo för ctrl+v.
+  -Först mail
+  -Sedan ämne
+  -Sist meddelandet
+Klicka enter i terminalen för att få nästa
+Pastea in de en i taget och skicka iväg mailet
+Programmet går igenom alla som finns i excelarket
+Meddelandet texten skrivs ut i txtfilen: text_file.txt
 
-Only connects to gmail accounts, make sure your gmail account is set to allows third party applications.
-
-(This works on Valberedningens email)
+Om ni vill göra ändringar till texten:
+För att skriva meddelande skriv contentFile.write("")
+För när data ska hämtas från excel använd receiver[i] där i = kolumn (kolumn A är 0)
+För att göra radbrott i meddelandet skriv contentFile.write("\n")

@@ -1,3 +1,0 @@
-Here you can write what text there should be in the mail.
-If you want something to have the value from its column, for example name write {{name}}
-      Note that it must match the header of that column.
